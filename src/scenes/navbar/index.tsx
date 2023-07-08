@@ -4,8 +4,6 @@ import { Link } from "react-router-dom"
 import AccessTimeFilledIcon from "@mui/icons-material/AccessTimeFilled"
 import FlexBetween from "@/components/FlexBetween"
 
-
-
 const Navbar = () => {
   const { palette } = useTheme()
   const [selected, setSelected] = useState("home")
