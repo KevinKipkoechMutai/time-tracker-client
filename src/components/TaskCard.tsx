@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import { Box, Button, Typography, useTheme } from "@mui/material"
 import FlexBetween from "./FlexBetween"
 import DeleteIcon from "@mui/icons-material/Delete"
-
+import { useDeleteTaskMutation } from "@/scenes/state/api"
+import { useState } from "react"
 
 type Props = {
     name: string,
@@ -13,6 +15,13 @@ type Props = {
 
 const TaskCard = ({ id, name, taskType, timeSpent, startDate }: Props) => {
     const { palette } = useTheme()
+    //const [isDeleting, setIsDeleting] = useState(false)
+
+    //delete a task
+    const handleDelete = async (id: string) => {
+        
+    }
+    
   return (
     <Box 
         width="30rem" 
@@ -43,7 +52,13 @@ const TaskCard = ({ id, name, taskType, timeSpent, startDate }: Props) => {
         </FlexBetween>
         <FlexBetween display="flex" flexDirection="row" gap="0.3rem">
             <Button variant="contained">Edit Task</Button>
-            <Button variant="contained" startIcon={<DeleteIcon/>} sx={{ backgroundColor: "red" }}>Delete</Button>
+            <Button 
+                variant="contained" 
+                startIcon={<DeleteIcon/>} 
+                sx={{ backgroundColor: "red" }}
+                onClick={() => handleDelete(id)}
+                
+            >Delete</Button>
         </FlexBetween>
     </Box>
   )

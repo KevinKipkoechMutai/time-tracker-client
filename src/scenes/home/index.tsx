@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Box, Button, Typography, useTheme } from "@mui/material"
 import HomeHero from "@/components/HomeHero"
 import TaskContainer from "@/components/TaskContainer"
@@ -12,8 +13,7 @@ const Home = () => {
   const data = useGetTasksQuery()
   const taskData = data.currentData
 
-
-  console.log(taskData)
+  //console.log(taskData)
 
   const tasks = useMemo(() => {
     return (
@@ -44,7 +44,7 @@ const Home = () => {
           <Button variant="contained">+ Create Task</Button>
         </FlexBetween>
       </Box>
-      <TaskContainer width="100%" height="100%" p="1.5rem" display="flex" flexDirection="column" gap="0.3rem">
+      <TaskContainer width="100%" p="1.5rem" display="flex" flexDirection="column" gap="0.3rem">
         {tasks}
       </TaskContainer>
     </Box>

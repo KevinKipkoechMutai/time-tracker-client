@@ -11,3 +11,14 @@ export interface GetTasksResponse {
     createdAt: string;
     updatedAt: string;
 }
+
+export interface DeleteTaskResponse {
+    id: string;
+}
+
+// export type Task = {
+//     id: string,
+//     name: string,
+//     timeSpent: number,
+//     startDate: Date
+// }
