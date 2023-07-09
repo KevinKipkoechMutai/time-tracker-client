@@ -3,6 +3,7 @@ export interface GetTasksResponse {
     _id: string;
     __v: number;
     name: string;
+    timeSpent: number,
     taskType: string;
     startDate: Date;
     endDate: Date;
